@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:background="@null"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ToolbarColored"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription=""
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:hint="Search Here"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textColorHint="@color/grey" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/galaxy"
+                app:layout_constraintBottom_toBottomOf="@id/guide_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--    <ImageView-->
+            <!--        android:id="@+id/profile_pict"-->
+            <!--        android:layout_width="120dp"-->
+            <!--        android:layout_height="120dp"-->
+            <!--        android:scaleType="centerCrop"-->
+            <!--        app:layout_constraintTop_toTopOf="@id/stroke"-->
+            <!--        app:layout_constraintBottom_toBottomOf="@id/stroke"-->
+            <!--        app:layout_constraintStart_toStartOf="@id/stroke"-->
+            <!--        app:layout_constraintEnd_toEndOf="@id/stroke"/>-->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_pict"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="10dp"
+                android:elevation="10dp"
+                android:src="@drawable/musnadil"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/guide_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guide_line" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="@dimen/dimen_margin_10dp"
+                android:elevation="11dp"
+                android:src="@drawable/status"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profile_pict"
+                app:layout_constraintEnd_toEndOf="@id/iv_profile_pict" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_notif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guide_line" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".20" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_margin_10dp"
+                android:text="Musnadil Firdaus"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_profile_pict" />
+
+            <ImageView
+                android:id="@+id/dot"
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/dot"
+                app:layout_constraintBottom_toBottomOf="@id/tv_name"
+                app:layout_constraintStart_toEndOf="@id/tv_name"
+                app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="1st"
+                app:layout_constraintBottom_toBottomOf="@id/tv_name"
+                app:layout_constraintStart_toEndOf="@id/dot"
+                app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_margin_10dp"
+                android:text="@string/desc"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/tag"
+                android:textSize="@dimen/dimen_text_13"
+                app:layout_constraintStart_toStartOf="@id/desc"
+                app:layout_constraintTop_toBottomOf="@id/desc" />
+
+            <TextView
+                android:id="@+id/company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_margin_10dp"
+                android:text="@string/company_name"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/tag"
+                app:layout_constraintTop_toBottomOf="@id/tag" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jakarta, Jakarta, Indonesia"
+                app:layout_constraintStart_toStartOf="@id/company_name"
+                app:layout_constraintTop_toBottomOf="@id/company_name" />
+
+            <TextView
+                android:id="@+id/followers_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_margin_10dp"
+                android:text="24,342"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/location"
+                app:layout_constraintTop_toBottomOf="@id/location" />
+
+            <TextView
+                android:id="@+id/text_followers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="followers"
+                app:layout_constraintBottom_toBottomOf="@id/followers_sum"
+                app:layout_constraintStart_toEndOf="@id/followers_sum"
+                app:layout_constraintTop_toTopOf="@id/followers_sum" />
+
+            <ImageView
+                android:id="@+id/dot2"
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/dot"
+                app:layout_constraintBottom_toBottomOf="@id/text_followers"
+                app:layout_constraintStart_toEndOf="@id/text_followers"
+                app:layout_constraintTop_toTopOf="@id/text_followers" />
+
+            <TextView
+                android:id="@+id/connection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="500+ connections"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/text_followers"
+                app:layout_constraintStart_toEndOf="@id/dot2"
+                app:layout_constraintTop_toTopOf="@id/text_followers" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/pict_conn_1"
+                android:layout_width="@dimen/dimen_35dp"
+                android:layout_height="@dimen/dimen_35dp"
+                android:layout_marginTop="@dimen/dimen_margin_10dp"
+                android:src="@drawable/hacker"
+                app:layout_constraintStart_toStartOf="@id/followers_sum"
+                app:layout_constraintTop_toBottomOf="@id/followers_sum" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/pict_conn_2"
+                android:layout_width="@dimen/dimen_35dp"
+                android:layout_height="@dimen/dimen_35dp"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/belugacat"
+                app:layout_constraintStart_toStartOf="@id/pict_conn_1"
+                app:layout_constraintTop_toTopOf="@id/pict_conn_1" />
+
+            <TextView
+                android:id="@+id/mutual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/mutual"
+                app:layout_constraintBottom_toBottomOf="@id/pict_conn_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/pict_conn_2"
+                app:layout_constraintTop_toTopOf="@id/pict_conn_2" />
+
+            <LinearLayout
+                android:id="@+id/ll_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_margin_10dp"
+                android:layout_marginTop="@dimen/dimen_margin_10dp"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mutual">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="90"
+                    android:backgroundTint="@color/blue"
+                    android:text="Message"
+                    android:textAllCaps="false"
+                    app:cornerRadius="25dp" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="10"
+                    android:alpha="0.8"
+                    android:background="@drawable/ic_option" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_hiring"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_margin_10dp"
+                android:layout_marginTop="@dimen/dimen_margin_10dp"
+                android:backgroundTint="@color/krem"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_button">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hiring"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/company_name"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="@string/company_location"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="@string/last_added"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View both jobs"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="@dimen/dimen_margin_10dp"
+                android:background="@color/krem"
+                app:layout_constraintTop_toBottomOf="@id/card_hiring" />
+
+            <TextView
+                android:id="@+id/tv_highlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_margin_10dp"
+                android:text="Highlights"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator" />
+
+            <ImageView
+                android:id="@+id/highlight1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/dimen_margin_10dp"
+                android:src="@drawable/binar"
+                app:layout_constraintStart_toStartOf="@id/tv_highlight"
+                app:layout_constraintTop_toBottomOf="@id/tv_highlight" />
+
+            <TextView
+                android:id="@+id/tv_title_highlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="You both work at Binar Academy"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/highlight1"
+                app:layout_constraintTop_toTopOf="@id/highlight1" />
+
+            <TextView
+                android:id="@+id/desc_highlight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_margin_10dp"
+                android:text="Alamanda started at binar academy 3 years before you did"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_title_highlight"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_highlight" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:text="Message"
+                android:textAllCaps="false"
+                android:textColor="@color/grey"
+                app:cornerRadius="20dp"
+                app:layout_constraintStart_toStartOf="@id/desc_highlight"
+                app:layout_constraintTop_toBottomOf="@id/desc_highlight"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="2dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

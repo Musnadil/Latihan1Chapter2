@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Latihan1Chapter2</string>
+    <string name="desc">Politeknik Harapan Bersama Kota Tegal student who interested with android development</string>
+    <string name="tag">#AndroidDev</string>
+    <string name="mutual"><b>307 mutual connections : </b>Hacker, Beluga, and 305 others</string>
+    <string name="hiring">Hiring a Business Analyst &amp; 1 other </string>
+    <string name="company_name">Binar Academy</string>
+    <string name="company_location"> · Jakarta Metropolitan Area</string>
+    <string name="last_added"> · 300 days ago</string>
+
+</resources>
