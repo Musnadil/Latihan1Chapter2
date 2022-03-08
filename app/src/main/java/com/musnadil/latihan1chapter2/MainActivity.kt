@@ -2,6 +2,7 @@ package com.musnadil.latihan1chapter2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.musnadil.latihan1chapter2.databinding.ActivityMainBinding
 
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val defaultSearch = "Musnadil Firdaus"
         binding.etSearch.setText(defaultSearch)
 
+
 //        val fotoProfile = binding.profile_pict
 //
 //        Glide.with(this)
@@ -27,6 +29,8 @@ class MainActivity : AppCompatActivity() {
 //            .circleCrop()
 //            .into(fotoProfile)
     }
+
+//    komen latihan commit
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
